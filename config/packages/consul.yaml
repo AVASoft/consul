@@ -1,0 +1,5 @@
+parameters:
+  serviceName: 'SERVICE'
+  hostName: 'avasoft-dev'
+  hostPort: '8080'
+  ttl: 10
