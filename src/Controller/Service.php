@@ -35,7 +35,7 @@ class Service extends Cache
 
         if($result == false) {
 
-            $config = $this->get($serviceName);
+            $config = $this->queryAddress($serviceName);
 
             $item = [];
 
