@@ -14,7 +14,7 @@ use \CurlHandle;
 class Client
 {
     private const CONSUL_PROTOCOL = 'http';
-    private const CONSUL_HOST = '172.255.232.11';//'172.17.0.1';
+    private const CONSUL_HOST = '172.17.0.1';//'172.17.0.1';
     private const CONSUL_PORT = '8500';
 
     /**
