@@ -75,6 +75,9 @@ class Adapter
         return new Service($offCache);
     }
 
+    /**
+     * @return Configuration
+     */
     public function getConfig(): Configuration
     {
         $config = new Configuration;
@@ -96,6 +99,7 @@ class Adapter
 
         return $this->KVStoreEndpoints()->find($keyword);
     }
+
     /**
      * @return array
      * @throws ConsulException
@@ -104,15 +108,13 @@ class Adapter
     {
         $sm = new DefaultCheckService;
         $config = self::getLocalConfig()['value'];
-        $config = json_decode($config, true);
+
         if(json_last_error() != 0) {
             throw new ConsulException('Error JSON parse Consul config', 500);
         }
         $sm->setEnv($config);
 
-
         $service = $this->Service()->addService($sm->getServiceCheck());
-
 
         return [$service];
     }
